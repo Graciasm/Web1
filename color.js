@@ -7,7 +7,6 @@ var Links = {
     //   i = i + 1;
     // }
     $('a').css('color', color);
-    $('#aa').css('color')
   }
 }
 var Body = {
@@ -41,3 +40,15 @@ function night_day_handler(self) {
     Links.SetColor('blue');
   }
 }
+/* 네비에서 현재패이지를 강조하려고 했으나 실패
+function Currentpage_Underline(){
+  var sidelinklist = document.getElementById('sidebar').querySelectorAll('ol li a');
+  var j = 0;
+  while(j<sidelinklist.length){
+    var temphref = sidelinklist[j].getAttribute("href");
+    if(temphref === window.location.href){
+      sidelinklist[j].style.textDecoration="underline";
+    }
+    j=j+1;
+  }
+}*/
