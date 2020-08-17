@@ -9,8 +9,10 @@
 <body>
   <div id="myDIV" class="header">
     <h2>My To Do List</h2>
-    <input type="text" id="myInput" placeholder="Title...">
-    <span onclick="newElement()" class="addBtn">Add</span>
+    <div class="InputBar">
+      <input type="text" id="myInput" placeholder="할 일...">
+      <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
   </div>
 
   <ul id="myUL">
@@ -21,6 +23,7 @@
     <li>Read a book</li>
     <li>Organize office</li>
   </ul>
+
   <style media="screen">
     /* Include the padding and border in an element's total width and height */
     * {
@@ -71,8 +74,8 @@
       content: '';
       position: absolute;
       border-color: #fff;
-      border-style: solid;
-      border-width: 0 2px 2px 0;
+      border-style: none solid solid none;
+      border-width: 2px;
       top: 10px;
       left: 16px;
       transform: rotate(45deg);
@@ -112,8 +115,8 @@
     input {
       margin: 0;
       border: none;
-      border-radius: 0;
-      width: 75%;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
       padding: 10px;
       float: left;
       font-size: 16px;
@@ -122,7 +125,6 @@
     /* Style the "Add" button */
     .addBtn {
       padding: 10px;
-      width: 25%;
       background: #d9d9d9;
       color: #555;
       float: left;
@@ -130,12 +132,18 @@
       font-size: 16px;
       cursor: pointer;
       transition: 0.3s;
-      border-radius: 0;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
 
     .addBtn:hover {
       background-color: #bbb;
     }
+
+        .InputBar{
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+        }
   </style>
   <script>
     // Create a "close" button and append it to each list item
